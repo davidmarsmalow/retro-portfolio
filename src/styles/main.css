@@ -17,6 +17,63 @@ body {
   max-width: 90%;
 }
 
+#boot {
+  height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.boot-lines {
+  text-align: left;
+}
+
+.boot-button {
+  background: black;
+  border: 3px solid var(--text-color);
+  color: var(--text-color);
+  padding: 12px 28px;
+  font-size: 18px;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.boot-button.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  animation: blink 1s infinite;
+}
+
+.boot-button:hover {
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
 .retro-about {
   max-width: 520px;
   margin: 40px auto;
@@ -25,9 +82,9 @@ body {
 
 .portrait-box {
   display: inline-block;
-  border: 4px solid white;
+  border: 4px solid var(--text-color);
   padding: 12px;
-  background: #111;
+  background: var(--bg-color);
 }
 
 .portrait-box img {
@@ -38,9 +95,9 @@ body {
 
 .info-box {
   margin-top: 20px;
-  border: 4px solid white;
+  border: 4px solid var(--text-color);
   padding: 20px;
-  background: #111827;
+  background: var(--bg-color);
   text-align: left;
 }
 
@@ -52,7 +109,7 @@ body {
 .role {
   font-size: 10px;
   /* margin-bottom: 14px; */
-  color: #22d3ee;
+  color: var(--accent-color);
 }
 
 .sub-role {
